@@ -1,0 +1,266 @@
+
+
+<!DOCTYPE html>
+{%load static %}
+{% static "image" as baseURL %}
+<style>
+.about_image
+{
+	width: 80%;
+}
+.about_image img
+{
+	max-width: 80%;
+}
+</style>
+<html lang="en">
+
+ <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>It's My World | Praneeth Kumar Chiluka</title>
+    
+    
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'css/p.css' %}">
+    <!-- Custom fonts for this template -->
+    <link rel="stylesheet" href="{% static 'css/r.css' %}">
+
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    
+    <link rel="stylesheet" href="{% static 'css/a.css' %}">
+
+  </head>
+
+  <head>
+
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="/">It's My World</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+           {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "tester:details" %}">Blog </a>
+            </li> 
+            
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "tester:about" %}">About</a>
+            </li>
+            
+              <li class="nav-item">
+              <a class="nav-link">{{request.user}}</a>
+               </li>
+                    <li class="nav-item">
+                        <a class="hello-msg" href="{% url "users:logout" %}">Logout</a>
+                    </li>
+              {% else %}
+              <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "users:login" %}">Blog </a>
+            </li> 
+            
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "tester:about" %}">About</a>
+            </li>
+            
+            
+              <li class="nav-item">
+                <a class="nav-link" href="{% url "users:register" %}">Sign Up</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url "users:login" %}">Login</a>
+              </li>
+              
+              {% endif %}
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('{{baseURL}}/images (9).jpeg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h3>Believes Success comes through stuggle</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="about">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					
+					<div class="section_title"><h2>A few words about Me</h2></div>
+					<h2>&nbsp</h2>
+					
+				</div>
+			</div>
+			<div class="row about_row">
+				<div class="col-lg-6">
+					<div class="about_content">
+						<div class="text_highlight"></div>
+						<div class="about_text">
+							
+						<p>My self I am Praneeth kumar chiluka working at TATA CONSULTANCY SERVICES graduated from St. Martin's Engineering College.</p>
+						
+						</div>
+ 					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="about_image"><img src="{{baseURL}}/me.jpg" alt=""></div>
+				</div>
+			</div>
+			
+<div class="album py-5 bg-light">
+        <div class="container">
+          <h1 style="text-align: center;">Pencil Sketches</h1><br>
+          <div class="row">
+            
+            
+
+            <div class="col-md-4">
+              
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="{{baseURL}}/20200325_204358.jpg">
+                <div class="card-body" style="text-align: center; ">
+                  
+                </div>
+              </div>
+              
+            </div>
+
+
+            
+
+            
+
+            <div class="col-md-4">
+              
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="{{baseURL}}/20200406_174216.jpg">
+                <div class="card-body" style="text-align: center; ">
+                  
+                </div>
+              </div>
+              
+            </div>
+
+            
+
+            <div class="col-md-4">
+              
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="{{baseURL}}/20200410_174544.jpg">
+                <div class="card-body" style="text-align: center; ">
+                  
+                </div>
+              </div>
+              
+            </div>
+
+            <div class="col-md-4">
+              
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="{{baseURL}}/20200329_130437.jpg ">
+                <div class="card-body" style="text-align: center; ">
+                  
+                </div>
+              </div>
+              
+            </div>
+            
+            
+            <div class="col-md-4">
+              
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="{{baseURL}}/20200403_140107.jpg">
+                <div class="card-body" style="text-align: center; ">
+                  
+                </div>
+              </div>
+              
+            </div>
+
+            <div class="col-md-4">
+              
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="{{baseURL}}/20200331_104613.jpg">
+                <div class="card-body" style="text-align: center; ">
+                  
+                </div>
+              </div>
+              
+            </div>
+
+            
+
+            
+          </div>
+
+        </div>
+</div>
+
+<div class="album py-5 bg-light">
+        <div class="container">
+          <h1 style="text-align: center;">Achievements</h1><br>
+          <div class="row">
+          
+          
+          <div class="col-md-4">
+              <a href="https://www.ijstr.org/final-print/may2016/Li-fi-Has-Just-Been-Tested-In-The-Real-World-And-It-Is-100-Times-Faster-Than-Wi-fi.pdf">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="{{baseURL}}/ijstr.jpg">
+                <div class="card-body" style="text-align: center; ">
+                  <p class="card-text" style="margin-top: 0;">IJSTR PAPER</p>
+                </div>
+              </div>
+              </a>
+            </div>
+
+        <p>Published paper in Internation journal Research on "LI-FI"</h2> </p>
+          </div>
+    </div>
+</div>
+   <footer class="text-muted">
+    <div class="container text-center">
+                <p class="copyright text-muted">Copyright &copy; It's my world 2020</p>
+
+               
+    </div>
+</footer>
+<script src="{% static 'js/a.js' %}"></script>
+<script src="{% static 'js/b.js' %}"></script>
+<script src="{% static 'js/c.js' %}"></script>
+  </body>
+
+</html>

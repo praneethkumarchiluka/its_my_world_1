@@ -1,0 +1,351 @@
+{% block content %}
+ {% load static %}
+
+{% static "image" as baseURL %}
+<html lang="en">
+
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>It's My World | Praneeth Kumar Chiluka</title>
+    
+    
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'css/p.css' %}">
+    <!-- Custom fonts for this template -->
+    <link rel="stylesheet" href="{% static 'css/r.css' %}">
+
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    
+    <link rel="stylesheet" href="{% static 'css/a.css' %}">
+
+  </head>
+
+  <head>
+
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="/">It's My World</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+           {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "tester:details" %}">Blog </a>
+            </li> 
+            
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "tester:about" %}">About</a>
+            </li>
+            
+              <li class="nav-item">
+              <a class="nav-link">{{request.user}}</a>
+               </li>
+                    <li class="nav-item">
+                        <a class="hello-msg" href="{% url "users:logout" %}">Logout</a>
+                    </li>
+              {% else %}
+              <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "users:login" %}">Blog </a>
+            </li> 
+            
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "tester:about" %}">About</a>
+            </li>
+            
+            
+              <li class="nav-item">
+                <a class="nav-link" href="{% url "users:register" %}">Sign Up</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url "users:login" %}">Login</a>
+              </li>
+              
+              {% endif %}
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('{{baseURL}}/sudo2.jpeg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+<style>
+                  td, th { padding: 20px; border: 3px #000000 solid; }
+
+    </style> 
+
+<form action="" method="POST">
+{% csrf_token %} 
+<table style="margin-left:auto;margin-right:auto;">
+{%for i in b%}
+<tr>
+{%for j in b%}
+
+{%if i is 1 and j is 1 %}
+<td>
+<input name="1" size="1" required>
+</td>
+{%endif%}
+
+{%if i is 1 and j is 2 %}
+<td>
+<input name="2" size="1" required>
+</td>
+{%endif%}
+
+{%if i is 1 and j is 3 %}
+<td>
+<input name="3" size="1"  value="3" disabled>
+</td>
+{%endif%}
+
+{%if i is 1 and j is 4 %}
+<td>
+<input name="4" size="1"  required>
+</td>
+{%endif%}
+
+
+{%if i is 1 and j is 5 %}
+<td>
+<input name="5" size="1"  required>
+</td>
+{%endif%}
+
+{%if i is 1 and j is 6 %}
+<td>
+<input name="6" size="1"  value="1" disabled>
+</td>
+{%endif%}
+
+{%if i is 2 and j is 1 %}
+<td>
+<input name="7" size="1"  value="6" disabled >
+</td>
+{%endif%}
+
+{%if i is 2 and j is 2 %}
+<td>
+<input name="8" size="1"  required>
+</td>
+{%endif%}
+
+{%if i is 2 and j is 3 %}
+<td>
+<input name="9"  size="1" required>
+</td>
+{%endif%}
+
+{%if i is 2 and j is 4 %}
+<td>
+<input name="10"  size="1" required>
+</td>
+{%endif%}
+{%if i is 2 and j is 5 %}
+<td>
+<input name="11"  size="1" required>
+</td>
+{%endif%}
+{%if i is 2 and j is 6 %}
+<td>
+<input name="12"  size="1" required>
+</td>
+{%endif%}
+
+{%if i is 3 and j is 1 %}
+<td>
+<input name="13" size="1"  required>
+</td>
+{%endif%}
+
+{%if i is 3 and j is 2 %}
+<td>
+<input name="14" size="1"  required>
+</td>
+{%endif%}
+
+{%if i is 3 and j is 3 %}
+<td>
+<input name="15"  size="1" value="2" disabled >
+</td>
+{%endif%}
+
+{%if i is 3 and j is 4 %}
+<td>
+<input name="16"  size="1" required >
+</td>
+{%endif%}
+
+{%if i is 3 and j is 5 %}
+<td>
+<input name="17"  size="1" required >
+</td>
+{%endif%}
+
+{%if i is 3 and j is 6 %}
+<td>
+<input name="18"  size="1" required >
+</td>
+{%endif%}
+
+
+{%if i is 4 and j is 1 %}
+<td>
+<input name="19"  size="1" required >
+</td>
+{%endif%}
+{%if i is 4 and j is 2 %}
+<td>
+<input name="20"  size="1" required >
+</td>
+{%endif%}
+{%if i is 4 and j is 3 %}
+<td>
+<input name="21"  size="1" required >
+</td>
+{%endif%}
+{%if i is 4 and j is 4 %}
+<td>
+<input name="22"  size="1" required >
+</td>
+{%endif%}
+{%if i is 4 and j is 5 %}
+<td>
+<input name="23"  size="1" value="4" disabled >
+</td>
+{%endif%}
+{%if i is 4 and j is 6 %}
+<td>
+<input name="24"  size="1" required >
+</td>
+{%endif%}
+
+{%if i is 5 and j is 1 %}
+<td>
+<input name="25"  size="1" required >
+</td>
+{%endif%}
+{%if i is 5 and j is 2 %}
+<td>
+<input name="26"  size="1" required >
+</td>
+{%endif%}
+{%if i is 5 and j is 3 %}
+<td>
+<input name="27"  size="1" required >
+</td>
+{%endif%}
+{%if i is 5 and j is 4 %}
+<td>
+<input name="28"  size="1" value="6" disabled>
+</td>
+{%endif%}
+{%if i is 5 and j is 5 %}
+<td>
+<input name="29"  size="1" required >
+</td>
+{%endif%}
+{%if i is 5 and j is 6 %}
+<td>
+<input name="30"  size="1" required >
+</td>
+{%endif%}
+
+{%if i is 6 and j is 1 %}
+<td>
+<input name="31"  size="1" required >
+</td>
+{%endif%}
+{%if i is 6 and j is 2 %}
+<td>
+<input name="32"  size="1" value="6" disabled >
+</td>
+{%endif%}
+{%if i is 6 and j is 3 %}
+<td>
+<input name="33"  size="1" required >
+</td>
+{%endif%}
+{%if i is 6 and j is 4 %}
+<td>
+<input name="34"  size="1" required >
+</td>
+{%endif%}
+{%if i is 6 and j is 5 %}
+<td>
+<input name="35"  size="1" required >
+</td>
+{%endif%}
+{%if i is 6 and j is 6 %}
+<td>
+<input name="36"  size="1" required >
+</td>
+{%endif%}
+{%endfor%}
+</tr>
+{%endfor%}
+
+
+</table>
+<div class="clearfix" style="text-align: center;padding: 70px 0;">
+<button>submit</button>
+</div>
+{% for message in messages %}
+<p style="color:red;text-align:center;">{{message}}</p>
+{% endfor %}
+</form>
+
+
+
+
+
+ <footer class="text-muted">
+    <div class="container text-center">
+                <p class="copyright text-muted">Copyright &copy; It's my world 2020</p>
+
+               
+    </div>
+</footer>
+<script src="{% static 'js/a.js' %}"></script>
+<script src="{% static 'js/b.js' %}"></script>
+<script src="{% static 'js/c.js' %}"></script>
+</body>
+</html>
+{% endblock %}

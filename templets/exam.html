@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+{% block content %}
+ {% load static %}
+
+{% static "image" as baseURL %}
+<html lang="en">
+
+
+  <head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>It's My World | Praneeth Kumar Chiluka</title>
+    
+    
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'css/p.css' %}">
+    <!-- Custom fonts for this template -->
+    <link rel="stylesheet" href="{% static 'css/r.css' %}">
+
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    
+    <link rel="stylesheet" href="{% static 'css/a.css' %}">
+
+  </head>
+
+  <head>
+
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="/">It's My World</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+           {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "tester:details" %}">Blog </a>
+            </li> 
+            
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "tester:about" %}">About</a>
+            </li>
+            
+              <li class="nav-item">
+              <a class="nav-link">{{request.user}}</a>
+               </li>
+                    <li class="nav-item">
+                        <a class="hello-msg" href="{% url "users:logout" %}">Logout</a>
+                    </li>
+              {% else %}
+              <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "users:login" %}">Blog </a>
+            </li> 
+            
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "tester:about" %}">About</a>
+            </li>
+            
+            
+              <li class="nav-item">
+                <a class="nav-link" href="{% url "users:register" %}">Sign Up</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url "users:login" %}">Login</a>
+              </li>
+              
+              {% endif %}
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('{{baseURL}}/exam1.jpeg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h2>Python Test</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+
+
+
+<body>
+	<div class="container">
+		
+		<main>
+			<form class="questionForm" id="q1" data-question="1">
+				<h3>1.What is a correct syntax to output "Hello World" in Python?</h3>
+				<ul>
+					<li><input name="q1" type="radio" value="a" />p("Hello World")</li>
+					<li><input name="q1" type="radio" value="b" />echo "Hello World"</li>
+					<li><input name="q1" type="radio" value="c" />echo("Hello World")</li>
+					<li><input name="q1" type="radio" value="d" />print("Hello World")</li>
+				</ul>
+				<button id="submit">Submit</button>
+			</form>
+			
+			<form class="questionForm" id="q2" data-question="2">
+				<h3>2.How do you insert COMMENTS in Python code? </h3>
+				<ul>
+					<li><input name="q2" type="radio" value="a" />/*This is a comment*/</li>
+					<li><input name="q2" type="radio" value="b" />//This is a comment</li>
+					<li><input name="q2" type="radio" value="c" />#This is a comment</li>
+					<li><input name="q2" type="radio" value="d" />/*This is a comment</li>
+				</ul>
+				<button id="submit">Submit</button>
+			</form>
+			
+			<form class="questionForm" id="q3" data-question="3">
+				<h3>3. Which one is NOT a legal variable name?</h3>
+				<ul>
+					<li><input name="q3" type="radio" value="a" />my_var</li>
+					<li><input name="q3" type="radio" value="b" /> _myvar</li>
+					<li><input name="q3" type="radio" value="c" /> my-var</li>
+					<li><input name="q3" type="radio" value="d" />Myvar</li>
+				</ul>
+				<button id="submit">Submit</button>
+			</form>
+			
+			<form class="questionForm" id="q4" data-question="4">
+				<h3>4.How do you create a variable with the numeric value 5?</h3>
+				<ul>
+					<li><input name="q4" type="radio" value="a" />x = 5</li>
+					<li><input name="q4" type="radio" value="b" />Both the answers are correct</li>
+					<li><input name="q4" type="radio" value="c" />x = int(5)</li>
+					<li><input name="q4" type="radio" value="d" />Both the answers are worng</li>
+				</ul>
+				<button id="submit">Submit</button>
+			</form>
+			
+			<form class="questionForm" id="q5" data-question="5">
+				<h3>5. What is the correct file extension for Python files?</h3>
+				<ul>
+					<li><input name="q5" type="radio" value="a" />.pyt</li>
+					<li><input name="q5" type="radio" value="b" />.pyth</li>
+					<li><input name="q5" type="radio" value="c" />.pt</li>
+					<li><input name="q5" type="radio" value="d" />.py</li>
+				</ul>
+				<button id="submit">Submit</button>
+			</form>
+			
+			<form class="questionForm" id="q5" data-question="5">
+				<h3>5. What is the correct file extension for Python files?</h3>
+				<ul>
+					<li><input name="q5" type="radio" value="a" />.pyt</li>
+					<li><input name="q5" type="radio" value="b" />.pyth</li>
+					<li><input name="q5" type="radio" value="c" />.pt</li>
+					<li><input name="q5" type="radio" value="d" />.py</li>
+				</ul>
+				<button id="submit">Submit</button>
+			</form>
+			
+			<form class="questionForm" id="q6" data-question="6">
+				<h3>6.How do you create a variable with the floating number 2.8?</h3>
+				<ul>
+					<li><input name="q6" type="radio" value="a" />x=2.8</li>
+					<li><input name="q6" type="radio" value="b" />x=float(2.8)</li>
+					<li><input name="q6" type="radio" value="c" />Both the answers are right</li>
+					<li><input name="q6" type="radio" value="d" />Both the answers are wrong</li>
+				</ul>
+				<button id="submit">Submit</button>
+			</form>
+			
+			<form class="questionForm" id="q7" data-question="7">
+				<h3>7. What is the correct syntax to output the type of a variable or object in Python?</h3>
+				<ul>
+					<li><input name="q7" type="radio" value="a" />print(typeOf(x))</li>
+					<li><input name="q7" type="radio" value="b" />print(typeof(x))</li>
+					<li><input name="q7" type="radio" value="c" />print(type(x))</li>
+					<li><input name="q7" type="radio" value="d" />print(typeof x)</li>
+				</ul>
+				<button id="submit">Submit</button>
+			</form>
+			
+			<form class="questionForm" id="q8" data-question="8">
+				<h3>8. What is the correct way to create a function in Python?</h3>
+				<ul>
+					<li><input name="q8" type="radio" value="a" />def myFunction():</li>
+					<li><input name="q8" type="radio" value="b" />create myFunction():</li>
+					<li><input name="q8" type="radio" value="c" />function myfunction():</li>
+					<li><input name="q8" type="radio" value="d" />Both 1 & 2</li>
+				</ul>
+				<button id="submit">Submit</button>
+			</form>
+			
+			<form class="questionForm" id="q9" data-question="9">
+				<h3>9. Which method can be used to remove any whitespace from both the beginning and the end of a string?</h3>
+				<ul>
+					<li><input name="q9" type="radio" value="a" />len()</li>
+					<li><input name="q9" type="radio" value="b" />trim()</li>
+					<li><input name="q9" type="radio" value="c" />ptrim()</li>
+					<li><input name="q9" type="radio" value="d" />strip()</li>
+				</ul>
+				<button id="submit">Submit</button>
+			</form>
+			
+			<form class="questionForm" id="q10" data-question="10">
+				<h3>10. Which method can be used to remove any whitespace from both the beginning and the end of a string?</h3>
+				<ul>
+					<li><input name="q10" type="radio" value="a" />toUpperCase()</li>
+					<li><input name="q10" type="radio" value="b" />upper()</li>
+					<li><input name="q10" type="radio" value="c" />uppercase()</li>
+					<li><input name="q10" type="radio" value="d" />upperCase()</li>
+				</ul>
+				<button id="submit">Submit</button>
+			</form>
+			
+			<form class="questionForm" id="q11" data-question="11">
+				<h3>11. Which method can be used to replace parts of a string?</h3>
+				<ul>
+					<li><input name="q11" type="radio" value="a" />replaceString()</li>
+					<li><input name="q11" type="radio" value="b" />switch()</li>
+					<li><input name="q11" type="radio" value="c" />replace()</li>
+					<li><input name="q11" type="radio" value="d" />repl()</li>
+				</ul>
+				<button id="submit">Submit</button>
+			</form>
+			
+			<form class="questionForm" id="q12" data-question="12">
+				<h3>12. Which operator is used to multiply numbers?</h3>
+				<ul>
+					<li><input name="q12" type="radio" value="a" />%</li>
+					<li><input name="q12" type="radio" value="b" />*</li>
+					<li><input name="q12" type="radio" value="c" />//</li>
+					<li><input name="q12" type="radio" value="d" />x</li>
+				</ul>
+				<button id="submit">Submit</button>
+			</form>
+			
+			<form class="questionForm" id="q13" data-question="13">
+				<h3>13. Which of these collections defines a LIST?</h3>
+				<ul>
+					<li><input name="q13" type="radio" value="a" />["apple", "banana", "cherry"]</li>
+					<li><input name="q13" type="radio" value="b" />{"apple", "banana", "cherry"}</li>
+					<li><input name="q13" type="radio" value="c" />{"name": "apple", "color": "green"}</li>
+					<li><input name="q13" type="radio" value="d" />("apple", "banana", "cherry")</li>
+				</ul>
+				<button id="submit">Submit</button>
+			</form>
+			
+			<form class="questionForm" id="q14" data-question="14">
+				<h3>14. Which of these collections defines a TUPLE?</h3>
+				<ul>
+					<li><input name="q14" type="radio" value="a" />["apple", "banana", "cherry"]</li>
+					<li><input name="q14" type="radio" value="b" />{"apple", "banana", "cherry"}</li>
+					<li><input name="q14" type="radio" value="c" />{"name": "apple", "color": "green"}</li>
+					<li><input name="q14" type="radio" value="d" />("apple", "banana", "cherry")</li>
+				</ul>
+				<button id="submit">Submit</button>
+			</form>
+			
+			<form class="questionForm" id="q15" data-question="15">
+				<h3>15. Which collection is ordered, changeable, and allows duplicate members?</h3>
+				<ul>
+					<li><input name="q15" type="radio" value="a" />TUPLE</li>
+					<li><input name="q15" type="radio" value="b" />DICTIONARY</li>
+					<li><input name="q15" type="radio" value="c" />LIST</li>
+					<li><input name="q15" type="radio" value="d" />SET</li>
+				</ul>
+				<button id="submit">Submit</button>
+			</form>
+			
+			<div id="results"></div>
+			<br>
+		</main>
+		<footer>
+			<div class="pull-left">Total: 15 Questions</div>
+			
+		</footer>
+	</div>
+	<script src="{% static 'js/jquery.js' %}"></script>
+	<script src="{% static 'js/quiz1.js'  %}"></script>
+ <footer class="text-muted">
+    <div class="container text-center">
+                <p class="copyright text-muted">Copyright &copy; It's my world 2020</p>
+
+               
+    </div>
+</footer>
+
+<script src="{% static 'js/a.js' %}"></script>
+<script src="{% static 'js/b.js' %}"></script>
+<script src="{% static 'js/c.js' %}"></script>
+</body>
+</html>
+{% endblock %}
